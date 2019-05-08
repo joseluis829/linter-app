@@ -1,10 +1,31 @@
 module.exports = {
-    parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-    plugins: ["@typescript-eslint"], // Uses the typescript eslint plugin
-    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"], // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-    parserOptions: {
-        ecmaVersion: 6, // Allows for the parsing ECMAScript 6 features
-        project: "./tsconfig.json", // Optional
-        sourceType: "module" // Allows for the use of imports
-    }
+  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
+  plugins: ["@typescript-eslint"], // Uses the typescript eslint plugin
+  extends: [
+    "airbnb",
+    "eslint:recommended",
+    'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+  ],
+  parserOptions: {
+    ecmaVersion: 6, // Allows for the parsing ECMAScript 6 features
+    project: "./tsconfig.json", // Optional
+    sourceType: "module" // Allows for the use of imports
+  },
+  rules: {
+    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": [2, 2],
+    /**
+     * @description rules of eslint-plugin-react
+    */
+    "react/jsx-filename-extension": ["warn", {
+      "extensions": [".jsx", ".tsx"]
+    }], // also want to use with ".tsx"
+  },
+  settings: {
+    react: {
+      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
+  },
 }
