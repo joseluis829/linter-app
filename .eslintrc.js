@@ -3,7 +3,7 @@ module.exports = {
   plugins: ["@typescript-eslint"], // Uses the typescript eslint plugin
   extends: [
     "airbnb",
-    "eslint:recommended",
+    //"eslint:recommended",
     'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
     "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
   ],
